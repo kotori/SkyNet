@@ -4,6 +4,7 @@
 #include <time.h>
 #include <string.h>
 
+// Load the SQLite3 Library
 #include "sqlite3/sqlite3.h"
 
 #include "database.h"
