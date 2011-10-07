@@ -16,6 +16,11 @@
 // Load the Database class header.
 #include "database.h"
 
+/*! \namespace KotoriApp
+    \brief Kotori's Application Namespace.
+
+    Kotori's Application Namespace.
+*/
 namespace KotoriApp
 {
 	Database::Database()

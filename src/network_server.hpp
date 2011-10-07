@@ -14,6 +14,11 @@
 #include <iostream>
 #include <string>
 
+/*! \namespace KotoriApp
+    \brief Kotori's Application Namespace.
+
+    Kotori's Application Namespace.
+*/
 namespace KotoriApp
 {
 	using boost::asio::ip::tcp;
