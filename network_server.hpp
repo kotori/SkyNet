@@ -1,3 +1,6 @@
+// Author: Kotori
+// Date: 5 Oct 2011
+
 #ifndef NETWORK_SERVER_HPP
 #define NETWORK_SERVER_HPP
 
