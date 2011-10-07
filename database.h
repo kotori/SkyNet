@@ -1,7 +1,10 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
+// Default location of the database
 #define DEFAULT_LOC "database.db"
+
+// Turn off/on logging
 #define ACTIVE_LOGGING false
 
 namespace KotoriApp
