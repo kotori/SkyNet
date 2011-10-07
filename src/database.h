@@ -17,7 +17,11 @@ namespace KotoriApp
 		~Database();
 
 		bool SelectInt(int &refVal, const char *sql, ...);
+		bool SelectStr(std::string &refVal, const char *sql, ...);
+		bool SelectChar(char* refVal, const char *sql, ...);
+
 		char* Format(const char *msg, ...);
+		bool Exec(const char *sql, ...);
 	private:
 		void Common();
 		void Close();

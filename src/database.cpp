@@ -53,6 +53,45 @@ namespace KotoriApp
 		is_open_ = false;
 	}
 
+	bool Database::SelectStr(std::string &refVal, const char *sql, ...)
+	{
+		if(Open())
+		{
+			return true;
+		}
+
+		char *tmp;
+		int rc;
+
+		sqlite3_stmt *stmt;
+		const char *tail;
+
+		va_list argList;
+		va_start(argList, sql);
+
+		tmp = sqlite3_vmprintf(sql, argList);
+
+		va_end(argList);
+
+		// Prepare the SQL statement via the sqlite3_prepare function.
+		rc = sqlite3_prepare(db_, tmp, strlen(tmp), &stmt, &tail);
+		if(rc != SQLITE_OK)
+		{
+			std::cout << "Error Processing SQL Statement: " << sqlite3_errmsg(db_) << "\n";
+			return true;
+		}
+
+		int ncols = sqlite3_column_count(stmt);
+		rc = sqlite3_step(stmt);
+
+		refVal = (char*)sqlite3_column_text(stmt, 0);
+
+		sqlite3_finalize(stmt);
+
+		Close( );
+		return false;
+	}
+
 	bool Database::SelectInt(int &refVal, const char *sql, ...)
 	{
 		if(Open())
@@ -87,6 +126,82 @@ namespace KotoriApp
 		refVal = sqlite3_column_int(stmt, 0);
 
 		sqlite3_finalize(stmt);
+
+		Close();
+		return false;
+	}
+
+	bool Database::SelectChar(char *refVal, const char *sql, ...)
+	{
+		if(Open())
+		{
+			return true;
+		}
+
+		char *tmp;
+		int rc;
+
+		sqlite3_stmt *stmt;
+		const char *tail;
+
+		va_list argList;
+		va_start(argList, sql);
+
+		tmp = sqlite3_vmprintf(sql, argList);
+
+		va_end(argList);
+
+		// Prepare the SQL statement via the sqlite3_prepare function.
+		rc = sqlite3_prepare(db_, tmp, strlen(tmp), &stmt, &tail);
+		if(rc != SQLITE_OK)
+		{
+			std::cout << "Error Processing SQL Statement: " << sqlite3_errmsg(db_) << "\n";
+                        return true;
+		}
+
+		int ncols = sqlite3_column_count(stmt);
+		rc = sqlite3_step(stmt);
+
+		char *tmps = NULL;
+
+		tmps = (char*)sqlite3_column_text(stmt, 0);
+
+		//strcpy_s(refVal, sizeof refVal, tmps);
+		strcpy(refVal, tmps);
+
+		//strcpy_s( refVal, tmps );
+
+		sqlite3_finalize(stmt);
+
+		Close( );
+		return false;
+	}
+
+	bool Database::Exec(const char *sql, ...)
+	{
+		if(Open())
+		{
+			return true;
+		}
+
+		char *err;
+		char *tmp;
+		va_list ap;
+		va_start(ap, sql);
+		tmp = sqlite3_vmprintf(sql, ap);
+		va_end(ap);
+
+		// Database functionality goes here.
+		int rc = sqlite3_exec(db_, tmp, NULL, NULL, &err);
+		if(rc != SQLITE_OK)
+		{
+			if(err != NULL)
+			{
+				sqlite3_free(err);
+			}
+		}
+
+		sqlite3_free(tmp);
 
 		Close();
 		return false;
