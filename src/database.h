@@ -1,3 +1,9 @@
+/*! \file database.h
+    \brief SQLite3 C++ Wrapper Header
+
+    SQLite3 C++ Wrapper Header. Contains the framework for the Database class.
+*/
+
 #ifndef DATABASE_H
 #define DATABASE_H
 
@@ -6,6 +12,8 @@
 
 // Turn off/on logging
 #define ACTIVE_LOGGING false
+
+#include "sqlite3/sqlite3.h"
 
 namespace KotoriApp
 {

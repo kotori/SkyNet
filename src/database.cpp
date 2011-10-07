@@ -1,3 +1,9 @@
+/*! \file database.cpp
+    \brief SQLite3 C++ Wrapper
+
+    SQLite3 C++ Wrapper. Contains the definitions for the Database class.
+*/
+
 #include <iostream>
 #include <stdio.h>
 #include <stdarg.h>
