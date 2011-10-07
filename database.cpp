@@ -7,6 +7,7 @@
 // Load the SQLite3 Library
 #include "sqlite3/sqlite3.h"
 
+// Load the Database class header.
 #include "database.h"
 
 namespace KotoriApp
