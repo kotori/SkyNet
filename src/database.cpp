@@ -94,7 +94,7 @@ bool Database::SelectStr(std::string &refVal, const char *sql, ...)
         return true;
     }
 
-    int ncols = sqlite3_column_count(stmt);
+    //int ncols = sqlite3_column_count(stmt);
     rc = sqlite3_step(stmt);
 
     refVal = (char*)sqlite3_column_text(stmt, 0);
@@ -133,7 +133,7 @@ bool Database::SelectInt(int &refVal, const char *sql, ...)
         return true;
     }
 
-    int ncols = sqlite3_column_count(stmt);
+    //int ncols = sqlite3_column_count(stmt);
     rc = sqlite3_step(stmt);
 
     refVal = sqlite3_column_int(stmt, 0);
@@ -172,7 +172,7 @@ bool Database::SelectChar(char *refVal, const char *sql, ...)
         return true;
     }
 
-    int ncols = sqlite3_column_count(stmt);
+    //int ncols = sqlite3_column_count(stmt);
     rc = sqlite3_step(stmt);
 
     char *tmps = NULL;

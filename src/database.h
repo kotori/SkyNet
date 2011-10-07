@@ -105,8 +105,26 @@ public:
     bool Exec(const char *sql, ...);
 
 private:
-    void Common();
+
+    /*! \fn void Common()
+        \brief Runs routines that are common among the constructors.
+
+        This function is called by the different constructors to maximize code reusage.
+    */
     void Close();
+
+    /*! \fn void Close()
+        \brief Closes an open connection to the SQLite3 database.
+
+        This function should safely close an open connection to /a db_ SQLite3 database.
+    */
+    void Close();
+
+    /*! \fn bool Open()
+        \brief Opens a connection to a SQLite3 database.
+
+        This function should safely opens a connection to /a db_ SQLite3 database.
+    */
     bool Open();
 
     bool is_open_;
