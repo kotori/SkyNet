@@ -22,11 +22,12 @@
 */
 namespace KotoriApp
 {
-/*! \class Database
-        \brief Database class
 
-        Database class provides SQLite3 I/O functionality.
-    */
+/*! \class Database
+    \brief Database class
+
+    Database class provides SQLite3 I/O functionality.
+*/
 class Database
 {
 public:
