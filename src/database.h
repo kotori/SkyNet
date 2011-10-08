@@ -112,7 +112,7 @@ private:
 
         This function is called by the different constructors to maximize code reusage.
     */
-    void Close();
+    void Common();
 
     /*! \fn void Close()
         \brief Closes an open connection to the SQLite3 database.
