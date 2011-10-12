@@ -4,16 +4,6 @@
 #ifndef NETWORK_SERVER_H
 #define NETWORK_SERVER_H
 
-#include <boost/asio.hpp>
-#include <boost/shared_ptr.hpp>
-#include <boost/thread.hpp>
-#include <boost/thread/mutex.hpp>
-#include <boost/bind.hpp>
-#include <boost/lexical_cast.hpp>
-
-#include <iostream>
-#include <string>
-
 /*! \namespace KotoriApp
     \brief Kotori's Application Namespace.
 
@@ -72,4 +62,4 @@ namespace KotoriApp
 
 }
 
-#endif // NETWORK_SERVER_HPP
+#endif // NETWORK_SERVER_H
