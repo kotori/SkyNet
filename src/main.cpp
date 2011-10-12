@@ -7,7 +7,7 @@
 #include <boost/asio.hpp>
 
 // Network Server Library.
-#include "network_server.hpp"
+#include "server.h"
 
 // Boost ASIO Namespace.
 using boost::asio::ip::tcp;
