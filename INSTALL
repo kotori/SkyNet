@@ -1,0 +1,4 @@
+Run the following to make skynet
+
+make
+make install
