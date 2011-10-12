@@ -1,4 +1,13 @@
-Run the following to make skynet
+= SkyNet -- Compiling =
 
-make
-make install
+Run the following to compile skynet:
+  $ make
+
+The location of the installation directory can be changed in the makefile.
+ Simply edit the 'INSTALL_PATH' variable.
+
+Libraries Used:
+  * SQLite3 <http://www.sqlite.org/index.html>
+  * BOOST.ASIO <http://www.boost.org/doc/libs/1_47_0/doc/html/boost_asio.html>
+
+
