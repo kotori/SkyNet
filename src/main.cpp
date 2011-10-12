@@ -2,17 +2,8 @@
 #include <cstdlib>
 #include <iostream>
 
-// Boost Libraries.
-//#include <boost/bind.hpp>
-//#include <boost/asio.hpp>
-
-// Network Server Library.
-//#include "server.h"
-
+// Management Library
 #include "manager.h"
-
-// Boost ASIO Namespace.
-//using boost::asio::ip::tcp;
 
 // Application's entry point.
 int main(int argc, char* argv[])
