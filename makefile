@@ -16,8 +16,10 @@ $(EXEC): $(OBJECTS)
 	mkdir -p $(INSTALL_PATH)/bin
 	$(CC) $(OBJECTS) -o $(INSTALL_PATH)/bin/$(EXEC) $(LDFLAGS)
 	@echo "Linking Process Complete!..."
-	# After compilation, compress the executable to save some space.
+	@echo "Compress the executable to save some space."
 	$(COMPRESS) $(INSTALL_PATH)/bin/$(EXEC)
+	cp -r etc/ $(INSTALL_PATH)/
+	mkdir -p $(INSTALL_PATH)/logs/
 	@echo "Compilation is Complete!"
 
 # Compilation commands:
