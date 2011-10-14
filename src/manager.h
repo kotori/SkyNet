@@ -33,31 +33,31 @@
 namespace KotoriApp
 {
 
-/*! \class Manager
-    \brief Manager class
+	/*! \class Manager
+		\brief Manager class
 
-    Manager class brings together all of the functions that are in a game server.
-*/
-class Manager
-{
-public:
-    /*! \fn Manager()
-        \brief Database class constructor
+		Manager class brings together all of the functions that are in a game server.
+	*/
+	class Manager
+	{
+	public:
+		/*! \fn Manager()
+			\brief Database class constructor
 
-        Manager class constructor. Takes no arguments.
-    */
-    Manager(int port);
+			Manager class constructor. Takes no arguments.
+		*/
+		Manager(int port);
 
-    int Start();
+		int Start();
 
-    int Stop();
+		int Stop();
 
-private:
+	private:
 
-    int port_;
-    int conn_limit_;
-    int current_conn_;
-};
+		int port_;
+		int conn_limit_;
+		int current_conn_;
+	};
 
 }
 
