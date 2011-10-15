@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="src\database.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="1253" topLine="39" />
+	</File>
+	<File name="src\main.cpp" open="1" top="1" tabpos="0">
+		<Cursor position="950" topLine="0" />
+	</File>
+	<File name="src\manager.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="1045" topLine="16" />
+	</File>
+</CodeBlocks_layout_file>
