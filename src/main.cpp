@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
         std::cerr << "Usage: " << argv[0] << " <port>\n";
         return 1;
     }
-
+    // I hate pointers
     KotoriApp::Manager *myManger = new KotoriApp::Manager(atoi(argv[1]));
 
     myManger->Start();
